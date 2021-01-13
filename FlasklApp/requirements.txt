@@ -1,0 +1,5 @@
+Flask==0.12.2
+requests==2.25.0
+requests-unixsocket==0.1.5
+system-service==0.3
+systemd-python==234
