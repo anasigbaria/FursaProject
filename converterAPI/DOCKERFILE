@@ -1,0 +1,9 @@
+FROM python:latest
+
+ADD . /converterAPI 
+
+WORKDIR /converterAPI
+
+RUN pip install -r requirements.txt
+
+ENTRYPOINT ["python","converter.py"]
