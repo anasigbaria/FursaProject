@@ -27,8 +27,10 @@ def convert(amount,fr,to):
     
 def main(argv):
     if argv[0]=="convert":
+        print (convert(argv[1],argv[2],argv[3]))
         return (convert(argv[1],argv[2],argv[3]))
     else:
+        print(currList())
         return currList()
 
      
