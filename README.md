@@ -10,11 +10,11 @@ to-do:
  - Kubernetes
 
 commands to test evrey part alone:
- - terraform part:
+- terraform part:
   - terraform init
   - terraform apply
   - then you need to enter the acssess and secrt key of your aws acc
- - FlaskApp (the front end):
+- FlaskApp (the front end):
   - python ./FlasklApp/app.py 
   - the visit:  http://127.0.0.1:5000/  using the browser
 - connverterapi (the part that connects to the api and does the conversion):
