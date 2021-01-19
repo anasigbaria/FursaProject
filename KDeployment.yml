@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: conventer-deployment
+  labels:
+    app: python
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: python
+  template:
+    metadata:
+      labels:
+        app: python
+    spec:
+      containers:
+      - name: converterAPI
+        image: converterAPI
+        ports:
+        - containerPort: 80
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  labels:
+    app: python
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: flask
+  template:
+    metadata:
+      labels:
+        app: flsk
+    spec:
+      containers:
+      - name: FlasklApp
+        image: FlasklApp
+        ports:
+        - containerPort: 5000
