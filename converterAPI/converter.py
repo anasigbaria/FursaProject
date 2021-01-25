@@ -1,6 +1,6 @@
 from flask import Flask
-import sys
 import requests, json
+from flask import request
 
 api_key = "c652aad8624cf514f2e3"
 base_url = "https://free.currconv.com/api/v7/"
@@ -24,19 +24,26 @@ def convert(amount,fr,to):
      result= float(amount)*float(x["results"][fr+"_"+to]["val"])
      return result
 
-    
-def main(argv):
-    if argv[0]=="convert":
-        print (convert(argv[1],argv[2],argv[3]))
-        return (convert(argv[1],argv[2],argv[3]))
-    else:
-        print(currList())
-        return currList()
 
-     
-    
+
+
+app = Flask(__name__)
+
+@app.route('/list')
+def index():
+    return str(currList())
+
+@app.route('/convert', methods=['GET'])
+def login():
+    cfrom = request.args.get('cfrom')
+    print(cfrom)
+    cto= request.args.get('cto')
+    print(cto)
+    amount= request.args.get('amount')
+    print(amount)
+    return str(convert(amount,cfrom,cto))
+
 
 
 if __name__ == "__main__":
-    # execute only if run as a script
-    main(sys.argv[1:])
+    app.run(host='0.0.0.0',debug=True)

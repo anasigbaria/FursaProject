@@ -2,17 +2,19 @@ version: '3'
 
 services: 
 
-  converterAPI:
+  converterapi:
     build: converterAPI/
-    restart: always
+    restart: on-failure
     ports:
-      - 3000:3000
+      - 8087:5000
 
-  FlasklApp:
+  flaskapp:
     build: FlasklApp/
-    restart: always
+    restart: on-failure
     ports:
       - 5000:5000
+    links:
+      - converterapi
  
 
     
