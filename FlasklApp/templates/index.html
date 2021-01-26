@@ -10,34 +10,48 @@
 <body>
 <h1>BEST CURRENCY CONVENTER</h1>
 
-<form  action="/action_page.php">
-    <b><label for="amount">amount:</label></b>
-    <input type="text" id="amount" name="amount">
+<form  method="POST">
+    <b>convert from:</b>
     <select name= cfrom method="GET" action="/">
         {% for cf in cfrom %}
         <option value= "{{cf}}" SELECTED>{{ cf }}</option>"
         {% endfor %}
     </select>
-</form>
+
+
 
 
 <p></p>
-<b>currency</b>
+<b>convert to  :</b>
 <select name= cto method="GET" action="/">
     {% for ct in cto %}
     <option value= "{{ct}}" SELECTED>{{ ct }}</option>"
     {% endfor %}
 </select>
+
+
 <p></p>
-<form action="/action_page.php"></form>
-    <input type="submit" value="convert ">
+
+
+
+    <b><label for="amount">amount:</label></b>
+    <input type="number" name="amount" placeholder="1">
+    <p></p>
+    <button name="forwardBtn" type="submit">convert</button>
 </form>
+
+
 <p></p>
+
+
+
+
 <form  action="/action_page.php">
-    <b><label for="Result">Result:</label></b>
-    <input type="text" id="result" name="result">
+    <b><label for="Result">Result: {{res}}</label></b>
 
 </form>
+
+
 
 </select>
 </body>
