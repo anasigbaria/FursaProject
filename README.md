@@ -22,3 +22,9 @@ commands to test evrey part alone:
   - example: python ./converterAPI/converter.py convert 1 DKK XAG
   - to get the currincies list that the api provid use:
   - python ./converterAPI/converter.py currencyList
+
+
+  /-------------------------------------------------------------------------
+  - sudo docker-compose up --build -d
+  - python converterAPI/converter.py 
+  
