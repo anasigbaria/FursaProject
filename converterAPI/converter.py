@@ -39,11 +39,11 @@ def login():
     print(cfrom)
     cto= request.args.get('cto')
     print(cto)
-    amount= request.args.get('amount')
+    amount= int(request.args.get('amount'))
     print(amount)
-    return str(convert(amount,cfrom,cto))
+    return str(convert(float(amount),cfrom,cto))
 
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0',debug=True)
+    app.run(host='0.0.0.0',debug=True,port=6666)
