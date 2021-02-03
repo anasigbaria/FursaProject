@@ -112,7 +112,7 @@ resource "aws_security_group" "allow_web" {
 }
 
 # the target group wich the load balncer will work on
-resource "aws_lb_target_group" "trggr" {
+/*resource "aws_lb_target_group" "trggr" {
   name = "target"
   port = 5000
   protocol = "HTTP"
@@ -154,4 +154,4 @@ resource "aws_lb" "my-lb" {
   tags = {
     Environment = "production"
   }
-}
+}*/
