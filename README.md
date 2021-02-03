@@ -11,7 +11,7 @@ commands to test evrey part alone:
 
 - the app itself:
 
-  -docker-compose up
+  - docker-compose up
   - then go to http://localhost:5000/ in your browser and you can use the site
 
   
