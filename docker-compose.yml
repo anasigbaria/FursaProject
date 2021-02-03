@@ -5,14 +5,20 @@ services:
   converterapi:
     build: converterAPI/
     restart: on-failure
+    container_name: 
+      conventer
     ports:
-      - 8087:5000
+      - 8087:6666
 
   flaskapp:
     build: FlasklApp/
     restart: on-failure
+    container_name: 
+      flaskapp
     ports:
       - 5000:5000
+    depends_on:
+      - converterapi
     links:
       - converterapi
  
