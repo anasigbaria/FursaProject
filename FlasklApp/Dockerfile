@@ -13,6 +13,6 @@ COPY . /app
 
 EXPOSE 5000
 
-ENTRYPOINT [ "python" ]
+RUN chmod a+x run.sh
 
-CMD [ "app.py" ]
+CMD ["./run.sh"]
